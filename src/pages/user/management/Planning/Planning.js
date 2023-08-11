@@ -59,7 +59,7 @@ function Planning() {
             durationType: "months",
             requirements: requirements
         }
-        console.log(planData);
+        // console.log(planData);
         const data = await createPlan(planData)
 
         if (data.error)

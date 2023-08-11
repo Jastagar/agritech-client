@@ -59,10 +59,10 @@ function Login() {
                 progress: undefined,
                 theme: "light",
             });
-            console.log("after try")
+            // console.log("after try")
             setLoading(false)
         }
-        console.log("after try")
+        // console.log("after try")
         setLoading(false)
     }
 

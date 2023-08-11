@@ -57,7 +57,7 @@ export function CampaignWidget({ title, target, contributors, _id, ...props }) {
     const { currentUser } = useUser()
 
     useEffect(() => {
-        console.log("getting CampLength")
+        // console.log("getting CampLength")
         if (_id)
             getCollectonCampbyId(_id).then((res) => {
                 setCollection(res.raisedAmount)
@@ -506,7 +506,7 @@ export function MSPChart() {
         setLoading(true)
         chart.destroy()
         const data = await getCropMSPData(e.target.value)
-        console.log(data);
+        // console.log(data);
         setChartData(data.data)
         setLoading(false)
     }

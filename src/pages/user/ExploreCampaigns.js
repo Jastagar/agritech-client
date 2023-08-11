@@ -131,7 +131,7 @@ function ExploreCampaigns() {
         if (campaigns.length === 0) {
             setLoading(true)
             getAllCamps().then((res) => {
-                console.log(res)
+                // console.log(res)
                 setCampaigns(res)
                 setLoading(false)
             })

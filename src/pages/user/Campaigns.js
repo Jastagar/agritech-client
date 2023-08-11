@@ -303,9 +303,9 @@ function StepperSelectPlanForm({ selectedPlan, selectPlan, secondTermsHandler })
   useEffect(() => {
     setLoading(true)
     getUserPlans().then(e => {
-      if (!userData.currentPlan)
-        setPlans(e.data.reverse())
-      else
+      // if (!userData.currentPlan)
+      //   setPlans(e.data.reverse())
+      // else
         setPlans(e.data?.filter(p => p.executing === true))
       setLoading(false)
     })
@@ -321,8 +321,8 @@ function StepperSelectPlanForm({ selectedPlan, selectPlan, secondTermsHandler })
     <div className='PlanAssociateContainer'>
       <h2>Choose Plan To Associate</h2>
       <div className="d-flex align-items-center">
-        <div onScroll={()=>{setSwipped(true)}} className='UserPlans d-flex w-100'>
-          {!swipped && plans.length>1 && 
+        <div onScroll={()=>setSwipped(true)} className='UserPlans d-flex w-100'>
+          {!swipped && plans && plans.length>1 && 
             <div className='TopSwipeInstruct w-75 text-center p-1'>
               <h4 className='p-0 m-0'>
                 <i className='animateSwipe'>{'<'}</i>
@@ -744,9 +744,10 @@ function ModalForm({ show, handleShow }) {
       featuredImage: featuredImage,
       associatedPlan: associatedPlan._id
     }
+    // console.log(dataToSend)
     const res = await createCampaign(dataToSend);
     // const res = ''
-    if (res.status === 'Deployed Successfully') {
+    if (res && res.status === 'Deployed Successfully') {
       toast.success(res.status, {
         position: "top-right",
         autoClose: 2000,

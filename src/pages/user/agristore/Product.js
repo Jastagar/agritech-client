@@ -20,7 +20,7 @@ function Product(props) {
         style: 'currency',
         currency: 'INR',
     });
-    console.log(props)
+    // console.log(props)
     const [openBuyModal, setShowBuyModal] = useState(false)
     const [modalDetails, setModalDetails] = useState({})
     const passwordRef = useRef()
@@ -50,7 +50,7 @@ function Product(props) {
         setShowBuyModal(!openBuyModal)
     }
 
-    console.log(props.product)
+    // console.log(props.product)
 
     return (
         <>

@@ -38,7 +38,7 @@ async function postcontribution(data) {
 }
 // async function postcontribution(data) {
 //     const res = await axios.post(funUrl + 'postcontribution', data)
-//     console.log(res.response.data);
+//     // console.log(res.response.data);
 //     if(res.hasOwnProperty("data"))
 //         return res.data
 //         else throw new Error(res.response.data.message)

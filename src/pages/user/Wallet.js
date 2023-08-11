@@ -39,7 +39,7 @@ function TransferModule() {
     }
     const res = await transferKCO(data)
     if (res.status === 'success') {
-      console.log(addressTo.onChange)
+      // console.log(addressTo.onChange)
       addressTo.onChange({ target: { value: '' } })
       amountTo.onChange({ target: { value: '' } })
       password.onChange({ target: { value: '' } })
@@ -189,7 +189,7 @@ function AddKCOModal({ theme, getOrderId, verifyPayment, getBalanceFormServer, u
         theme: "light",
       }); return
     }
-    console.log(orderData.id);
+    // console.log(orderData.id);
     const options = {
       key: process.env.REACT_APP_RAZORPAY_ID,
       amount: orderData.amountDue, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -212,7 +212,7 @@ function AddKCOModal({ theme, getOrderId, verifyPayment, getBalanceFormServer, u
           handleBuyModal()
           getBalanceFormServer(userData.walletAddress)
         } catch (error) {
-          console.log(error)
+          // console.log(error)
           toast.error(error, {
             position: "top-right",
             autoClose: 5000,
@@ -308,14 +308,14 @@ function Wallet() {
     setBalanceLoader(true)
     const balance = await getBalance(acc)
     setBalance(balance.amount)
-    console.log("set!!", balance.amount);
+    // console.log("set!!", balance.amount);
     setBalanceLoader(false)
   }
 
   function renderQR() {
     // QRCode.toCanvas(canvasRef.current, userData.walletAddress, function (error) {
     //   if (error) console.error(error)
-    //   console.log('success!');
+    //   // console.log('success!');
     // })
     const qrCode = new QRCodeStyling({
       width: 200,
@@ -340,7 +340,7 @@ function Wallet() {
       renderQR()
       getBalanceFormServer(userData.walletAddress)
       getTransactions().then(e => {
-        console.log(e)
+        // console.log(e)
         setWalletTx(e.wallet)
         setCampsTx(e.camps)
 

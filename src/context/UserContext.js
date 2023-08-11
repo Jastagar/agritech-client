@@ -37,7 +37,7 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.post("auth/signup", data, { withCredentials: true })
             if (response.hasOwnProperty("data")) {
-                console.log(response.data);
+                // console.log(response.data);
             } else throw response
             // setLoading(false)
         } catch (error) {
@@ -52,16 +52,16 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.post("auth/login", credentials)
             if (response.hasOwnProperty("data")) {
-                console.log(response.data);
+                // console.log(response.data);
             } else {
-                console.log(response);
+                // console.log(response);
                 throw response
             }
             axios.defaults.headers.common['Authorization'] = `${response.data['accessToken']}`
             setCurrentUser(response.data.userId)
             navigate("/dashboard")
         } catch (error) {
-            console.log(error.response.data.message);
+            // console.log(error.response.data.message);
             throw error.response.data.message
         }
         // try {
@@ -99,11 +99,11 @@ export function UserProvider({ children }) {
         const response = await axios.post("refreshToken", {})
         if (response.hasOwnProperty("data")) {
             const data = response.data
-            console.log("Checking refreshtoken " + cookies.get("isLoggedIn") + "-----", data);
+            // console.log("Checking refreshtoken " + cookies.get("isLoggedIn") + "-----", data);
             setCurrentUser(data.userId)
             axios.defaults.headers.common['Authorization'] = `${data['accessToken']}`
             setLoading(false)
-            console.log(cookies.get("isLoggedIn"));
+            // console.log(cookies.get("isLoggedIn"));
             return true
         }
         else {
@@ -171,10 +171,10 @@ export function UserProvider({ children }) {
             if (!currentUser) return
             const response = await axios.post("/user/data", { userId: currentUser })
             if (response.hasOwnProperty("data")) {
-                console.log(response.data);
+                // console.log(response.data);
                 setUserData(response.data.data)
             } else {
-                console.log(response);
+                // console.log(response);
                 throw response
             }
         } catch (error) {
@@ -190,10 +190,10 @@ export function UserProvider({ children }) {
             if (!currentUser) return
             const response = await axios.post("/user/campaigns", { userId: currentUser })
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 setUserCampaigns(response.data.data)
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
@@ -220,7 +220,7 @@ export function UserProvider({ children }) {
                 return response.data.data
             else throw response
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -231,7 +231,7 @@ export function UserProvider({ children }) {
                 return response.data.data
             else throw response
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -239,10 +239,10 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.get("/store/products/" + prodId)
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 return response.data.data
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
@@ -258,14 +258,14 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.get("https://easyworldapi.onrender.com/country?country=all")
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 return response.data.data
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             return []
         }
     }
@@ -274,14 +274,14 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.get(`https://easyworldapi.onrender.com/state?country=${country}&&state=all`)
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 return response.data.data
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             return []
         }
     }
@@ -290,14 +290,14 @@ export function UserProvider({ children }) {
         try {
             const response = await axios.get(`https://easyworldapi.onrender.com/city?country=${country}&&state=${state}&&city=all`)
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 return response.data.data
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             return []
         }
     }
@@ -305,7 +305,7 @@ export function UserProvider({ children }) {
     useEffect(() => {
         if (checkTokenCookie)
             checkToken();
-        console.log(checkTokenCookie);
+        // console.log(checkTokenCookie);
         // if(!userData) getUserData()
     }, [checkTokenCookie]);
 

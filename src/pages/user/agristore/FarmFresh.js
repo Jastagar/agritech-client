@@ -49,8 +49,8 @@ export default function FarmFresh() {
 
   async function getInventory() {
     const data = await getUserInventory()
-    console.log("inventory -- >",data)
-    console.log(inventory)
+    // console.log("inventory -- >",data)
+    // console.log(inventory)
     if (data.error)
       toast.error(data.message, {
         position: "top-right",

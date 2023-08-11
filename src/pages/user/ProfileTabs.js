@@ -43,7 +43,7 @@ function ProfileTabs() {
     }
 
     function editPersonalDet(e) {
-        console.log(personalDetails)
+        // console.log(personalDetails)
         setPersonalDetails((prev) => {
             return ({
                 ...prev,
@@ -53,7 +53,7 @@ function ProfileTabs() {
     }
 
     function editAgriDetails(e) {
-        console.log(agriDetails)
+        // console.log(agriDetails)
         setAgriDetails((prev) => {
             return (
                 {
@@ -88,7 +88,7 @@ function ProfileTabs() {
 
     function delCrop(e, deletedcrop) {
         e.preventDefault()
-        console.log(deletedcrop)
+        // console.log(deletedcrop)
         let filteredCrops = cropsSown.filter((crop) => {
             if (crop != deletedcrop) {
                 return true;

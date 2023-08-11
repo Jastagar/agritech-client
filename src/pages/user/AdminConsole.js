@@ -9,7 +9,7 @@ function AdminConsole() {
     const { userData, getUserData, getAdminData, adminData } = useUser()
 
     useEffect(() => {
-        console.log(userData);
+        // console.log(userData);
         if (!userData) {
             getUserData()
         }

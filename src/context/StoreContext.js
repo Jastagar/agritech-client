@@ -76,10 +76,10 @@ export function StoreContextProvider({ children }) {
         try {
             const response = await axios.get("/store/products/" + prodId)
             if (response.hasOwnProperty("data")) {
-                console.log(response.data)
+                // console.log(response.data)
                 return response.data.data
             } else {
-                console.log(response)
+                // console.log(response)
                 throw response
             }
         } catch (error) {
@@ -93,7 +93,7 @@ export function StoreContextProvider({ children }) {
             if (!response.hasOwnProperty("data")) throw response
             getUserCart()
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -103,7 +103,7 @@ export function StoreContextProvider({ children }) {
             const response = await axios.delete("/user/cart/" + itemId)
             if (!response.hasOwnProperty("data")) throw response
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -119,7 +119,7 @@ export function StoreContextProvider({ children }) {
             else throw response
         } catch (error) {
             setCart([])
-            console.log(error);
+            // console.log(error);
             setCartLoading(false)
         }
     }
@@ -131,7 +131,7 @@ export function StoreContextProvider({ children }) {
                 return response.data
             else throw response
         } catch (error) {
-            console.log(error.response.data.message);
+            // console.log(error.response.data.message);
             return error.response.data
         }
     }

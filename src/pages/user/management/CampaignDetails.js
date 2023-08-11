@@ -30,7 +30,7 @@ function CreatorDetails({ refPass, isOwner, imgUrl, name, email, walletAddress, 
   function renderQR() {
     // QRCode.toCanvas(canvasRef.current, userData.walletAddress, function (error) {
     //   if (error) console.error(error)
-    //   console.log('success!');
+    //   // console.log('success!');
     // })
     const qrCode = new QRCodeStyling({
       width: 200,
@@ -128,7 +128,7 @@ function CampaignDescription({ refPass, description }) {
 
 function CampaignPledgesAndPromises({ pledges, refPass, openContributionModal }) {
   const [searchParams, setSearchParams] = useSearchParams()
-  console.log(pledges)
+  // console.log(pledges)
   return (
     <div ref={refPass}>
       <div className='text-start p-3'>
@@ -800,7 +800,7 @@ export default function CampaignDetails() {
   }
   const isOwner = userData._id === activeCampaign.manager._id
 
-  console.log("Active Campaign--->", activeCampaign)
+  // console.log("Active Campaign--->", activeCampaign)
 
 
   const valuesForCampaignVotesInfo = {

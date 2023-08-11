@@ -44,7 +44,7 @@ function ProductDetails(props) {
         fetchProductDetails(productId)
     }, [location])
 
-    console.log(productData)
+    // console.log(productData)
     return (
         <div className='row flex-column align-items-start w-100 p-3'>
             <div className="product-details-header d-flex justify-content-between">

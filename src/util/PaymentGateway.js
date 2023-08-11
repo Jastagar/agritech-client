@@ -32,7 +32,7 @@ const verifyPaymentStatus = async (order_id, razorpay_payment_id, payment_sig, u
             )
         }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
     }
 }
 
@@ -48,7 +48,7 @@ export default async function beginPayment(currency, amount, userData, toastCont
         amount: currency === "INR" ? parseFloat((amount * USD_INR_CONVERSION_FACTOR).toFixed(2)) : amount,
         cc: cc
     }
-    console.log(payload);
+    // console.log(payload);
     const { data } = await axios.post("wallet/razorpay", payload)
 
     const options = {
