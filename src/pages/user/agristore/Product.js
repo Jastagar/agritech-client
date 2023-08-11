@@ -9,11 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import shoppingCart from '../../../assets/icons/shopping_cart.svg'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
-<<<<<<< master
 import StarRating from './StarRating';
-=======
-import {RatingStars} from './ProductDetails';
->>>>>>> master
 
 function Product(props) {
     const { theme } = useUser()
@@ -110,14 +106,6 @@ function Product(props) {
                     <div onClick={() => { navigate("/agristore/product/" + props.product._id) }} style={{ backgroundImage: `url(${props.product.imgUrl})` }} alt={props.product.title} className='product-image' />
                     <h5 onClick={() => { navigate("/agristore/product/" + props.product._id) }}>{props.product.title}</h5>
                     <hr className='style-two' />
-<<<<<<< master
-=======
-                    <span>Price:<CurrencyIconComponent size='30' adjustY={'-10%'} /><span className="price">{INR.format(props.product.price).replace("₹", "KCO ")}</span>/-</span>
-                    <hr className='style-two' />
-                    <div>
-                        <RatingStars rating={props.product.rating} />
-                    </div>
->>>>>>> master
 
                     
                     <span>Price:<CurrencyIconComponent size='25' adjustY={'-10%'} /><span className="price">{INR.format(props.product.price).replace("₹", "KCO ")}</span>/-</span>
